@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1519288857 source:/home/lions/work/projects/qupoint/source/QuPaint/main.cpp
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Box.H>
+
