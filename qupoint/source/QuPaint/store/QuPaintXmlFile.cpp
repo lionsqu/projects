@@ -2,30 +2,24 @@
 //未经书面授权，商业性组织不得销售或赠送本代码以及本代码的衍生代码，编译的中间产物和可执行文件，以及各类文档。
 //邮箱:lionsqu@yahoo.com
 //
-#include "QuStarter.h"
+#include "QuPaintXmlFile.h"
 
-QuStarter::QuStarter()
+QuPaintXmlFile::QuPaintXmlFile(std::wstring path, std::wstring filename)
 {
     //ctor
 }
 
-QuStarter::~QuStarter()
+QuPaintXmlFile::~QuPaintXmlFile()
 {
     //dtor
 }
 
-int QuStarter::run()
+int QuPaintXmlFile::Load()
 {
+    return 0;
+}
 
-    QuStoreKeg store;
-    QuLogicKeg logic;
-    QuView view;
-
-    view.Create();
-
-    store.run();
-    logic.run();
-    view.run();
-
+int QuPaintXmlFile::Save()
+{
     return 0;
 }

@@ -10,7 +10,7 @@
 1519359351 source:/home/lions/work/projects/qupoint/source/QuPaint/core/QuEntity.cpp
 	"QuEntity.h"
 
-1519359403 /home/lions/work/projects/qupoint/source/QuPaint/core/QuEntity.h
+1519360966 /home/lions/work/projects/qupoint/source/QuPaint/core/QuEntity.h
 	<QuObject.h>
 
 1519359413 /home/lions/work/projects/qupoint/source/QuPaint/core/QuObject.h
@@ -46,11 +46,25 @@
 
 1519359422 /home/lions/work/projects/qupoint/source/QuPaint/core/QuViewKeg.h
 
-1519359373 source:/home/lions/work/projects/qupoint/source/QuPaint/start/QuStarter.cpp
+1519362961 source:/home/lions/work/projects/qupoint/source/QuPaint/start/QuStarter.cpp
 	"QuStarter.h"
 
-1519359429 /home/lions/work/projects/qupoint/source/QuPaint/start/QuStarter.h
+1519362212 /home/lions/work/projects/qupoint/source/QuPaint/start/QuStarter.h
 	<QuStoreKeg.h>
 	<QuLogicKeg.h>
-	<QuViewKeg.h>
+	<QuView.h>
+
+1519360780 source:/home/lions/work/projects/qupoint/source/QuPaint/store/QuPaintXmlFile.cpp
+	"QuPaintXmlFile.h"
+
+1519360720 /home/lions/work/projects/qupoint/source/QuPaint/store/QuPaintXmlFile.h
+	<string>
+
+1519362913 source:/home/lions/work/projects/qupoint/source/QuPaint/view/QuView.cpp
+	"QuView.h"
+
+1519362667 /home/lions/work/projects/qupoint/source/QuPaint/view/QuView.h
+	<FL/Fl.H>
+	<FL/Fl_Window.H>
+	<FL/Fl_Box.H>
 

@@ -15,6 +15,9 @@
 					<Add option="-g" />
 					<Add directory="core" />
 					<Add directory="logic" />
+					<Add directory="start" />
+					<Add directory="store" />
+					<Add directory="view" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -27,6 +30,8 @@
 					<Add option="-s" />
 					<Add directory="core" />
 					<Add directory="logic" />
+					<Add directory="store" />
+					<Add directory="view" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -55,6 +60,10 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="start/QuStarter.cpp" />
 		<Unit filename="start/QuStarter.h" />
+		<Unit filename="store/QuPaintXmlFile.cpp" />
+		<Unit filename="store/QuPaintXmlFile.h" />
+		<Unit filename="view/QuView.cpp" />
+		<Unit filename="view/QuView.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

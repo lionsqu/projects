@@ -8,7 +8,7 @@
 
 #include <QuStoreKeg.h>
 #include <QuLogicKeg.h>
-#include <QuViewKeg.h>
+#include <QuView.h>
 
 
 
