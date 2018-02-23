@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1519390959 source:/home/lions/work/projects/queditor/source/QuEditor/main.cpp
+	<QuEditor.h>
+
+1519390967 source:/home/lions/work/projects/queditor/source/QuEditor/src/QuEditor.cpp
+	"QuEditor.h"
+
+1519390915 /home/lions/work/projects/queditor/source/QuEditor/include/QuEditor.h
+	<QuEditorWindow.h>
+	<FL/Fl_Menu.h>
+	<FL/Fl_Text_Buffer.h>
+	<FL/fl_ask.h>
+
+1519390973 source:/home/lions/work/projects/queditor/source/QuEditor/src/QuEditorWindow.cpp
+	"QuEditorWindow.h"
+
+1519390951 /home/lions/work/projects/queditor/source/QuEditor/include/QuEditorWindow.h
+	<FL/Fl.h>
+	<FL/Fl_Double_Window.h>
+	<FL/Fl_Menu_Bar.h>
+
