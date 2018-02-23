@@ -2,13 +2,21 @@
 //未经书面授权，商业性组织不得销售或赠送本代码以及本代码的衍生代码，编译的中间产物和可执行文件，以及各类文档。
 //邮箱:lionsqu@yahoo.com
 //
-#include <QuStarter.h>
+#ifndef QUSTOREKEG_H
+#define QUSTOREKEG_H
 
 
-int main (int argc, char ** argv)
+class QuStoreKeg
 {
+    public:
+        QuStoreKeg();
+        virtual ~QuStoreKeg();
 
-  QuStarter::run();
+    public:
+        int run();
 
-  return(0);
-}
+    protected:
+    private:
+};
+
+#endif // QUSTOREKEG_H

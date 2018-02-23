@@ -13,6 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="core" />
+					<Add directory="logic" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -23,6 +25,8 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-s" />
+					<Add directory="core" />
+					<Add directory="logic" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -32,7 +36,25 @@
 		<Linker>
 			<Add option="`fltk-config --ldflags`" />
 		</Linker>
+		<Unit filename="core/QuClass.cpp" />
+		<Unit filename="core/QuClass.h" />
+		<Unit filename="core/QuCore.cpp" />
+		<Unit filename="core/QuCore.h" />
+		<Unit filename="core/QuData.cpp" />
+		<Unit filename="core/QuData.h" />
+		<Unit filename="core/QuEntity.cpp" />
+		<Unit filename="core/QuEntity.h" />
+		<Unit filename="core/QuLogicKeg.cpp" />
+		<Unit filename="core/QuLogicKeg.h" />
+		<Unit filename="core/QuObject.cpp" />
+		<Unit filename="core/QuObject.h" />
+		<Unit filename="core/QuStoreKeg.cpp" />
+		<Unit filename="core/QuStoreKeg.h" />
+		<Unit filename="core/QuViewKeg.cpp" />
+		<Unit filename="core/QuViewKeg.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="start/QuStarter.cpp" />
+		<Unit filename="start/QuStarter.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
