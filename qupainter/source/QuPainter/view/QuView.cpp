@@ -140,8 +140,8 @@ QuView::~QuView()
 int QuView::Create()
 {
     CreateWindow();
-    //CreateMenuBar();
-    //CreateToolsBar();
+    CreateMenuBar();
+    CreateToolsBar();
     //CreateTabs();
     CreateMain();
     //CreateStatusBar();
@@ -182,7 +182,7 @@ int QuView::CreateToolsBar()
 
 int QuView::CreateMain()
 {
-    ///*
+    /*
     Fl_Box *box;
 
     box = new Fl_Box (20, 40, 260, 100, "Hello World!");
@@ -191,8 +191,9 @@ int QuView::CreateMain()
     box->labelsize (36);
     box->labelfont (FL_BOLD+FL_ITALIC);
     box->labeltype (FL_SHADOW_LABEL);
-        //*/
+    */
 
+    /*
     //m_scroll = new QuScrollView(200, 30, 640-230, 480-60);
     m_scroll = new QuScrollView(0, 0, 640, 480);
     m_scroll->type(Fl_Scroll::BOTH_ALWAYS);
@@ -200,6 +201,23 @@ int QuView::CreateMain()
     //m_verticalbar = new Fl_Scrollbar(640-30,30, 30, 480-60);
     //m_horizontalbar = new Fl_Scrollbar(0,480-30, 640-30, 30);
     //m_horizontalbar->type(FL_HORIZONTAL);
+    */
+
+    m_tabs = new Fl_Tabs(0, 30, 300, m_window->h() - 60);
+    m_group = new Fl_Group(0, 60, m_tabs->w(), m_tabs->h() - 30, "模型");
+
+    m_browser = new Fl_Browser(0, 60, m_tabs->w(), m_group->h());
+    m_browser->end();
+    m_group->resizable(m_browser);
+    m_group->end();
+    m_tabs->resizable(m_group);
+    m_tabs->end();
+
+    m_scroll = new QuScrollView(300, 30, m_window->w() - 300, m_window->h() - 60);
+    m_scroll->type(Fl_Scroll::BOTH_ALWAYS);
+    m_window->resizable(m_tabs);
+    m_window->resizable(m_scroll);
+    m_scroll->end();
 
     return 0;
 }
@@ -207,9 +225,10 @@ int QuView::CreateMain()
 int QuView::CreateTabs()
 {
     m_tabs = new Fl_Tabs(0, 30, 200, 480-60);
-    m_browser = new Fl_Browser(0, 30, 100, 480-60);
-    //m_browser->add();
+    m_browser = new Fl_Browser(0, 30, 100, 480-60, "模型");
+    m_browser->end();
     m_tabs->add(m_browser);
+    m_tabs->end();
     return 0;
 }
 

@@ -78,11 +78,13 @@ class QuView
         Fl_Menu_Bar *m_menubar;
 
         Fl_Tabs *m_tabs;
+        Fl_Group *m_group;
         Fl_Browser *m_browser;
         Fl_Scroll *m_scroll;
 
-        Fl_Scrollbar *m_horizontalbar;
-        Fl_Scrollbar *m_verticalbar;
+
+        //Fl_Scrollbar *m_horizontalbar;
+        //Fl_Scrollbar *m_verticalbar;
 };
 
 #endif // QUVIEW_H
