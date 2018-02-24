@@ -13,6 +13,10 @@
 #include <FL/Fl_Menu_Bar.h>
 #include <FL/Fl_Scroll.h>
 #include <FL/Fl_Scrollbar.h>
+#include <FL/Fl_Tabs.h>
+#include <FL/Fl_Browser.h>
+
+#include <QuScrollView.h>
 
 
 
@@ -59,18 +63,26 @@ class QuView
         int CreateMenuBar();
         int CreateToolsBar();
         int CreateMain();
+        int CreateTabs();
         int CreateStatusBar();
 
         int DestroyWindow();
         int DestroyMenuBar();
         int DestroyToolsBar();
         int DestroyMain();
+        int DestroyTabs();
         int DestroyStatusBar();
 
     private:
         Fl_Window *m_window;
         Fl_Menu_Bar *m_menubar;
+
+        Fl_Tabs *m_tabs;
+        Fl_Browser *m_browser;
         Fl_Scroll *m_scroll;
+
+        Fl_Scrollbar *m_horizontalbar;
+        Fl_Scrollbar *m_verticalbar;
 };
 
 #endif // QUVIEW_H

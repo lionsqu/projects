@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="view" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -23,6 +24,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-s" />
+					<Add directory="view" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -59,6 +61,10 @@
 		<Unit filename="start/QuStarter.h" />
 		<Unit filename="store/QuPaintXmlFile.cpp" />
 		<Unit filename="store/QuPaintXmlFile.h" />
+		<Unit filename="view/QuCanvas.cpp" />
+		<Unit filename="view/QuCanvas.h" />
+		<Unit filename="view/QuScrollView.cpp" />
+		<Unit filename="view/QuScrollView.h" />
 		<Unit filename="view/QuView.cpp" />
 		<Unit filename="view/QuView.h" />
 		<Extensions>

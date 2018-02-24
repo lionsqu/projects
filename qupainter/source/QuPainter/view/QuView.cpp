@@ -140,10 +140,11 @@ QuView::~QuView()
 int QuView::Create()
 {
     CreateWindow();
-    CreateMenuBar();
-    CreateToolsBar();
+    //CreateMenuBar();
+    //CreateToolsBar();
+    //CreateTabs();
     CreateMain();
-    CreateStatusBar();
+    //CreateStatusBar();
 
     return 0;
 }
@@ -152,6 +153,7 @@ int QuView::Destroy()
 {
     DestroyStatusBar();
     DestroyMain();
+    DestroyTabs();
     DestroyToolsBar();
     DestroyMenuBar();
     DestroyWindow();
@@ -180,6 +182,7 @@ int QuView::CreateToolsBar()
 
 int QuView::CreateMain()
 {
+    ///*
     Fl_Box *box;
 
     box = new Fl_Box (20, 40, 260, 100, "Hello World!");
@@ -188,10 +191,25 @@ int QuView::CreateMain()
     box->labelsize (36);
     box->labelfont (FL_BOLD+FL_ITALIC);
     box->labeltype (FL_SHADOW_LABEL);
+        //*/
 
-    m_scroll = new Fl_Scroll(0, 30, 640-30, 480);
-    m_scroll->resizable(m_scroll);
+    //m_scroll = new QuScrollView(200, 30, 640-230, 480-60);
+    m_scroll = new QuScrollView(0, 0, 640, 480);
+    m_scroll->type(Fl_Scroll::BOTH_ALWAYS);
 
+    //m_verticalbar = new Fl_Scrollbar(640-30,30, 30, 480-60);
+    //m_horizontalbar = new Fl_Scrollbar(0,480-30, 640-30, 30);
+    //m_horizontalbar->type(FL_HORIZONTAL);
+
+    return 0;
+}
+
+int QuView::CreateTabs()
+{
+    m_tabs = new Fl_Tabs(0, 30, 200, 480-60);
+    m_browser = new Fl_Browser(0, 30, 100, 480-60);
+    //m_browser->add();
+    m_tabs->add(m_browser);
     return 0;
 }
 
@@ -216,6 +234,11 @@ int QuView::DestroyToolsBar()
 }
 
 int QuView::DestroyMain()
+{
+    return 0;
+}
+
+int QuView::DestroyTabs()
 {
     return 0;
 }
