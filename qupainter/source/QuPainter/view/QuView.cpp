@@ -5,6 +5,9 @@
 #include "QuView.h"
 
 
+#include <resources/line.xpm>
+#include <QuTabsView.h>
+
 
 
 Fl_Menu_Item Qu_menuitems[] =
@@ -142,7 +145,7 @@ int QuView::Create()
     CreateWindow();
     CreateMenuBar();
     CreateToolsBar();
-    //CreateTabs();
+    CreateTabs();
     CreateMain();
     //CreateStatusBar();
 
@@ -203,19 +206,33 @@ int QuView::CreateMain()
     //m_horizontalbar->type(FL_HORIZONTAL);
     */
 
+    /*
     m_tabs = new Fl_Tabs(0, 30, 300, m_window->h() - 60);
     m_group = new Fl_Group(0, 60, m_tabs->w(), m_tabs->h() - 30, "模型");
 
-    m_browser = new Fl_Browser(0, 60, m_tabs->w(), m_group->h());
-    m_browser->end();
-    m_group->resizable(m_browser);
+    //m_browser = new Fl_Browser(0, 60, m_tabs->w(), m_group->h());
+    //m_browser->end();
+    //m_group->resizable(m_browser);
+
+    //Fl_Pixmap line(line_xpm);
+    Fl_Pixmap *line = new Fl_Pixmap(line_xpm);
+
+    m_list = new Fl_Scroll(0, 0, 300, 300);
+    Fl_Box *line_box = new Fl_Box(0,60,16,16);
+    line_box->image(line);
+    line_box->type(_FL_SHADOW_BOX);
+    m_list->end();
+
+
+
     m_group->end();
     m_tabs->resizable(m_group);
     m_tabs->end();
+        */
 
-    m_scroll = new QuScrollView(300, 30, m_window->w() - 300, m_window->h() - 60);
+    m_scroll = new QuScrollView(200, 30, m_window->w() - 200, m_window->h() - 60);
     m_scroll->type(Fl_Scroll::BOTH_ALWAYS);
-    m_window->resizable(m_tabs);
+    //m_window->resizable(m_tabs);
     m_window->resizable(m_scroll);
     m_scroll->end();
 
@@ -224,10 +241,11 @@ int QuView::CreateMain()
 
 int QuView::CreateTabs()
 {
-    m_tabs = new Fl_Tabs(0, 30, 200, 480-60);
-    m_browser = new Fl_Browser(0, 30, 100, 480-60, "模型");
-    m_browser->end();
-    m_tabs->add(m_browser);
+    m_tabs = new QuTabsView(0, 30, 200, 480-60);
+
+    m_tabs->create();
+    m_window->resizable(m_tabs);
+
     m_tabs->end();
     return 0;
 }

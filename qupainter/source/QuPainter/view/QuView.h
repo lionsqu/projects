@@ -14,9 +14,10 @@
 #include <FL/Fl_Scroll.h>
 #include <FL/Fl_Scrollbar.h>
 #include <FL/Fl_Tabs.h>
-#include <FL/Fl_Browser.h>
+//#include <FL/Fl_Browser.h>
 
 #include <QuScrollView.h>
+#include <QuTabsView.h>
 
 
 
@@ -77,9 +78,10 @@ class QuView
         Fl_Window *m_window;
         Fl_Menu_Bar *m_menubar;
 
-        Fl_Tabs *m_tabs;
+        QuTabsView *m_tabs;
         Fl_Group *m_group;
-        Fl_Browser *m_browser;
+        //Fl_Browser *m_browser;
+        Fl_Scroll *m_list;
         Fl_Scroll *m_scroll;
 
 
