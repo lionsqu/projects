@@ -6,45 +6,7 @@
 #define QUEDITOR_H
 
 
-#include <QuEditorWindow.h>
-#include <FL/Fl_Menu.h>
-#include <FL/Fl_Text_Buffer.h>
-#include <FL/fl_ask.h>
-
-
-extern Fl_Menu_Item Qu_menuitems[];
-extern Fl_Text_Buffer *Qu_textbuff;
-extern int Qu_changed;
-extern int Qu_loading;
-extern int Qu_errno;
-extern char Qu_filename[256];
-extern char Qu_title[256];
-
-
-extern void new_cb(Fl_Widget*, void*);
-extern void open_cb(Fl_Widget*, void*);
-extern void insert_cb(Fl_Widget*, void*);
-extern void save_cb(void);
-extern void saveas_cb(void);
-extern void view_cb(Fl_Widget*, void*);
-extern void close_cb(Fl_Widget*, void*);
-extern void quit_cb(Fl_Widget*, void*);
-
-extern void undo_cb(Fl_Widget*, void*);
-extern void cut_cb(Fl_Widget*, void*);
-extern void copy_cb(Fl_Widget*, void*);
-extern void paste_cb(Fl_Widget*, void*);
-extern void delete_cb(Fl_Widget*, void*);
-
-extern void find_cb(Fl_Widget*, void*);
-extern void find2_cb(Fl_Widget*, void*);
-extern void replace_cb(Fl_Widget*, void*);
-extern void replace2_cb(Fl_Widget*, void*);
-
-
-
-extern int check_save(void);
-
+#include <QuEditView.h>
 
 
 
@@ -54,14 +16,11 @@ class QuEditor
         QuEditor();
         virtual ~QuEditor();
 
-        int create();
-        int show(int& argc, char**& argv);
-        int run();
+        int run(int argc, char** argv);
 
     protected:
-        QuEditorWindow  *m_window;
-
     private:
+        QuEditView m_editview;
 };
 
 #endif // QUEDITOR_H
