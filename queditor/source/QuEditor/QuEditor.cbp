@@ -34,19 +34,17 @@
 		<Linker>
 			<Add option="`fltk-config --ldflags`" />
 		</Linker>
-		<Unit filename="include/QuCallBack.h" />
+		<Unit filename="include/QuCallback.h" />
+		<Unit filename="include/QuCommon.h" />
 		<Unit filename="include/QuEditView.h" />
 		<Unit filename="include/QuEditWindow.h" />
 		<Unit filename="include/QuEditor.h" />
-		<Unit filename="include/QuStyle.h" />
-		<Unit filename="include/common.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/QuCallBack.cpp" />
+		<Unit filename="src/QuCallback.cpp" />
+		<Unit filename="src/QuCommon.cpp" />
 		<Unit filename="src/QuEditView.cpp" />
 		<Unit filename="src/QuEditWindow.cpp" />
 		<Unit filename="src/QuEditor.cpp" />
-		<Unit filename="src/QuStyle.cpp" />
-		<Unit filename="src/common.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
