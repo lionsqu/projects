@@ -9,4 +9,10 @@
 #define TS 14 // default editor textsize
 
 
+extern int changed;
+extern int loading;
+extern int num_windows;
+
+const int line_num_width = 75;
+
 #endif // COMMON_H

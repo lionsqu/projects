@@ -23,6 +23,8 @@ int QuEditView::create()
     m_menubar->copy(menuitems, m_editwindow);
 
     //m_editwindow->create();
+
+    editwindow = m_editwindow;
 }
 
 int QuEditView::destroy()

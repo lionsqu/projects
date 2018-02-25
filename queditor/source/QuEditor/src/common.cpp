@@ -4,3 +4,6 @@
 //
 #include "common.h"
 
+int changed = 0;
+int loading = 0;
+int num_windows = 0;

@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -23,6 +24,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-s" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -30,9 +32,21 @@
 			<Add option="`fltk-config --cxxflags`" />
 		</Compiler>
 		<Linker>
-			<Add option="`fltk-config --ldstaticflags`" />
+			<Add option="`fltk-config --ldflags`" />
 		</Linker>
+		<Unit filename="include/QuCallBack.h" />
+		<Unit filename="include/QuEditView.h" />
+		<Unit filename="include/QuEditWindow.h" />
+		<Unit filename="include/QuEditor.h" />
+		<Unit filename="include/QuStyle.h" />
+		<Unit filename="include/common.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/QuCallBack.cpp" />
+		<Unit filename="src/QuEditView.cpp" />
+		<Unit filename="src/QuEditWindow.cpp" />
+		<Unit filename="src/QuEditor.cpp" />
+		<Unit filename="src/QuStyle.cpp" />
+		<Unit filename="src/common.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -6,13 +6,21 @@
 #define QUCALLBACK_H
 
 
-
+#include <FL/Fl.h>
+#include <FL/filename.H>
 #include <FL/Fl_Menu_Bar.h>
+#include <FL/Fl_Text_Editor.h>
+#include <FL/Fl_Native_File_Chooser.H>
+#include <common.h>
+#include <QuEditWindow.h>
+#include <QuStyle.h>
 
 
 
+extern QuEditWindow *editwindow;
 extern Fl_Menu_Item menuitems[];
-
+extern char filename[FL_PATH_MAX];
+extern char title[FL_PATH_MAX];
 
 
 //style
@@ -50,7 +58,7 @@ extern void close_cb(Fl_Widget*, void* v);
 extern void quit_cb(Fl_Widget*, void*);
 
 extern void view_cb(Fl_Widget*, void*);
-
+extern Fl_Window* new_view();
 
 
 
