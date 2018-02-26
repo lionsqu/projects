@@ -21,6 +21,7 @@ class QuCallback
         QuCallback();
         virtual ~QuCallback();
 
+        //全局参数
         static int m_loading;
         static int m_changed;
         static char m_filename[FL_PATH_MAX];
@@ -28,6 +29,9 @@ class QuCallback
 
 
         static Fl_Text_Buffer m_buffer;
+
+        static const int line_num_width;
+
 
         //
         static void new_cb(Fl_Widget*, void*);
@@ -37,7 +41,22 @@ class QuCallback
         static void changed_cb(int, int nInserted, int nDeleted, int, const char *, void *v);
 
 
-    protected:
+        static void insert_cb(Fl_Widget*, void*);
+        static void view_cb(Fl_Widget*, void*);
+        static void close_cb(Fl_Widget*, void*);
+        static void cut_cb(Fl_Widget*, void*);
+        static void copy_cb(Fl_Widget*, void*);
+        static void paste_cb(Fl_Widget*, void*);
+        static void delete_cb(Fl_Widget*, void*);
+        static void linenumbers_cb();
+        static void wordwrap_cb();
+
+
+        static void find_cb(Fl_Widget*, void*);
+        static void find2_cb(Fl_Widget*, void*);
+        static void replace_cb(Fl_Widget*, void*);
+        static void replace2_cb(Fl_Widget*, void*);
+
         static bool check_save();
         static void set_title(Fl_Window *w);
 
@@ -48,6 +67,8 @@ class QuCallback
 
         static void save_file(const char *newfile);
         static void load_file(const char *newfile, int ipos);
+
+    protected:
 
     private:
 };

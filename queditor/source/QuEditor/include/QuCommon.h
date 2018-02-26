@@ -7,8 +7,7 @@
 #define QUCOMMON_H
 
 
-//extern int loading;
-//extern int changed;
+
 
 
 #endif // QUCOMMON_H

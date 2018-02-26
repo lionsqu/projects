@@ -39,12 +39,14 @@
 		<Unit filename="include/QuEditView.h" />
 		<Unit filename="include/QuEditWindow.h" />
 		<Unit filename="include/QuEditor.h" />
+		<Unit filename="include/QuStyle.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/QuCallback.cpp" />
 		<Unit filename="src/QuCommon.cpp" />
 		<Unit filename="src/QuEditView.cpp" />
 		<Unit filename="src/QuEditWindow.cpp" />
 		<Unit filename="src/QuEditor.cpp" />
+		<Unit filename="src/QuStyle.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

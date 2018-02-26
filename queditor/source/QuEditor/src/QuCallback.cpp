@@ -18,7 +18,7 @@ int QuCallback::m_loading = 0;
 int QuCallback::m_changed = 0;
 char QuCallback::m_filename[FL_PATH_MAX] = "";
 char QuCallback::m_title[FL_PATH_MAX] = "";
-
+const int QuCallback::line_num_width = 75;
 
 
 QuCallback::QuCallback()
@@ -149,5 +149,58 @@ void QuCallback::load_file(const char *newfile, int ipos)
     else if(!insert)strcpy(m_filename, newfile);
     m_loading = 0;
     m_buffer.call_modify_callbacks();
+
+}
+
+void QuCallback::insert_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::view_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::close_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::cut_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::copy_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::paste_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::delete_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::linenumbers_cb()
+{
+}
+
+void QuCallback::wordwrap_cb()
+{
+}
+
+void QuCallback::find_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::find2_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::replace_cb(Fl_Widget*, void*)
+{
+}
+
+void QuCallback::replace2_cb(Fl_Widget*, void*)
+{
 
 }

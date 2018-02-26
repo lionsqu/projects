@@ -10,17 +10,45 @@
 
 
 
-
 Fl_Menu_Item menuitems[] =
 {
-    {"&File",       0,       0,       0,       FL_SUBMENU},
-    {"&New",        0,  (Fl_Callback*)QuCallback::new_cb},
-    {"&Open...",    FL_COMMAND + 'o', (Fl_Callback*)QuCallback::open_cb,    0,  FL_MENU_DIVIDER},
+    { "&File",              0, 0, 0, FL_SUBMENU },
+    { "&New File",        0, (Fl_Callback *)QuCallback::new_cb },
+    { "&Open File...",    FL_COMMAND + 'o', (Fl_Callback *)QuCallback::open_cb },
+    { "&Insert File...",  FL_COMMAND + 'i', (Fl_Callback *)QuCallback::insert_cb, 0, FL_MENU_DIVIDER },
+    { "&Save File",       FL_COMMAND + 's', (Fl_Callback *)QuCallback::save_cb },
+    { "Save File &As...", FL_COMMAND + FL_SHIFT + 's', (Fl_Callback *)QuCallback::saveas_cb, 0, FL_MENU_DIVIDER },
+    {
+        "New &View",        FL_ALT
+#ifdef __APPLE__
+        + FL_COMMAND
+#endif
+        + 'v', (Fl_Callback *)QuCallback::view_cb, 0
+    },
+    { "&Close View",      FL_COMMAND + 'w', (Fl_Callback *)QuCallback::close_cb, 0, FL_MENU_DIVIDER },
+    { "E&xit",            FL_COMMAND + 'q', (Fl_Callback *)QuCallback::quit_cb, 0 },
+    { 0 },
 
-    {"E&xit",        FL_COMMAND + 'q',      (Fl_Callback*)QuCallback::quit_cb,      0},
-    {0}
+    { "&Edit", 0, 0, 0, FL_SUBMENU },
+    { "Cu&t",             FL_COMMAND + 'x', (Fl_Callback *)QuCallback::cut_cb },
+    { "&Copy",            FL_COMMAND + 'c', (Fl_Callback *)QuCallback::copy_cb },
+    { "&Paste",           FL_COMMAND + 'v', (Fl_Callback *)QuCallback::paste_cb },
+    { "&Delete",          0, (Fl_Callback *)QuCallback::delete_cb },
+    { "Preferences",      0, 0, 0, FL_SUBMENU },
+    { "Line Numbers",   FL_COMMAND + 'l', (Fl_Callback *)QuCallback::linenumbers_cb, 0, FL_MENU_TOGGLE },
+    { "Word Wrap",      0,                (Fl_Callback *)QuCallback::wordwrap_cb, 0, FL_MENU_TOGGLE },
+    { 0 },
+    { 0 },
+
+    { "&Search", 0, 0, 0, FL_SUBMENU },
+    { "&Find...",         FL_COMMAND + 'f', (Fl_Callback *)QuCallback::find_cb },
+    { "F&ind Again",      FL_COMMAND + 'g', QuCallback::find2_cb },
+    { "&Replace...",      FL_COMMAND + 'r', QuCallback::replace_cb },
+    { "Re&place Again",   FL_COMMAND + 't', QuCallback::replace2_cb },
+    { 0 },
+
+    { 0 }
 };
-
 
 QuEditView::QuEditView()
 {
