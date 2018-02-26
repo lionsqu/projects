@@ -18,6 +18,9 @@
 
 #include <QuScrollView.h>
 #include <QuTabsView.h>
+#include <QuViewKeg.h>
+#include <QuLogic.h>
+
 
 
 
@@ -50,7 +53,7 @@ extern void replace2_cb(Fl_Widget*, void*);
 class QuView
 {
     public:
-        QuView();
+        QuView(QuLogic *logic);
         virtual ~QuView();
 
     public:
@@ -85,8 +88,13 @@ class QuView
         Fl_Scroll *m_scroll;
 
 
+        //QuViewKeg * m_keg;
+
         //Fl_Scrollbar *m_horizontalbar;
         //Fl_Scrollbar *m_verticalbar;
+
+    public:
+        QuLogic *m_logic;
 };
 
 #endif // QUVIEW_H

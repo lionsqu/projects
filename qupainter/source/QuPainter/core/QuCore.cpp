@@ -7,9 +7,11 @@
 QuCore::QuCore()
 {
     //ctor
+    m_viewkeg = new QuViewKeg();
 }
 
 QuCore::~QuCore()
 {
     //dtor
+    delete m_viewkeg;
 }

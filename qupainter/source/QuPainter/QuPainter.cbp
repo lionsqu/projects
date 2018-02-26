@@ -15,6 +15,9 @@
 					<Add option="-g" />
 					<Add directory="view" />
 					<Add directory="." />
+					<Add directory="logic" />
+					<Add directory="store" />
+					<Add directory="data" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +29,9 @@
 					<Add option="-O2" />
 					<Add option="-s" />
 					<Add directory="view" />
+					<Add directory="logic" />
+					<Add directory="store" />
+					<Add directory="data" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -40,6 +46,10 @@
 		</Compiler>
 		<Linker>
 			<Add option="`fltk-config --ldflags`" />
+			<Add library="/usr/lib64/libfltk_images.so" />
+			<Add library="/usr/lib64/libfltk_gl.so" />
+			<Add library="/usr/lib64/libfltk_forms.so" />
+			<Add library="/usr/lib64/libfltk.so" />
 		</Linker>
 		<Unit filename="core/QuClass.cpp" />
 		<Unit filename="core/QuClass.h" />
@@ -57,11 +67,23 @@
 		<Unit filename="core/QuStoreKeg.h" />
 		<Unit filename="core/QuViewKeg.cpp" />
 		<Unit filename="core/QuViewKeg.h" />
+		<Unit filename="data/QuLine.cpp" />
+		<Unit filename="data/QuLine.h" />
+		<Unit filename="data/QuPoint.cpp" />
+		<Unit filename="data/QuPoint.h" />
+		<Unit filename="data/QuSurface.cpp" />
+		<Unit filename="data/QuSurface.h" />
+		<Unit filename="logic/QuLogic.cpp" />
+		<Unit filename="logic/QuLogic.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="start/QuStarter.cpp" />
 		<Unit filename="start/QuStarter.h" />
 		<Unit filename="store/QuPaintXmlFile.cpp" />
 		<Unit filename="store/QuPaintXmlFile.h" />
+		<Unit filename="store/QuStore.cpp" />
+		<Unit filename="store/QuStore.h" />
+		<Unit filename="view/QuButton.cpp" />
+		<Unit filename="view/QuButton.h" />
 		<Unit filename="view/QuCanvas.cpp" />
 		<Unit filename="view/QuCanvas.h" />
 		<Unit filename="view/QuScrollView.cpp" />
@@ -70,6 +92,8 @@
 		<Unit filename="view/QuTabsView.h" />
 		<Unit filename="view/QuView.cpp" />
 		<Unit filename="view/QuView.h" />
+		<Unit filename="view/QuWindow.cpp" />
+		<Unit filename="view/QuWindow.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

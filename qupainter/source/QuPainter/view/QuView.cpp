@@ -129,7 +129,8 @@ void replace2_cb(Fl_Widget*, void*)
 
 
 
-QuView::QuView()
+QuView::QuView(QuLogic *logic) :
+    m_logic(logic)
 {
     //ctor
 }
@@ -230,7 +231,10 @@ int QuView::CreateMain()
     m_tabs->end();
         */
 
-    m_scroll = new QuScrollView(200, 30, m_window->w() - 200, m_window->h() - 60);
+    //m_scroll = new QuScrollView(200, 30, m_window->w() - 200, m_window->h() - 60);
+
+
+    m_scroll = new QuScrollView(this, 200, 30, m_window->w() - 200, m_window->h() - 60);
     m_scroll->type(Fl_Scroll::BOTH_ALWAYS);
     //m_window->resizable(m_tabs);
     m_window->resizable(m_scroll);

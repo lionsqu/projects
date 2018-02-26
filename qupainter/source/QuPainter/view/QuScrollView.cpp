@@ -1,3 +1,7 @@
+//版权所有©: 2018 瞿正峰（Lions）
+//未经书面授权，商业性组织或者个人不得销售或赠送本代码以及本代码的衍生代码，编译的中间产物或者可执行文件，以及各类文档。
+//邮箱:lionsqu@yahoo.com
+//
 #include "QuScrollView.h"
 
 QuScrollView::QuScrollView(int x, int y, int w, int h, const char*l):
@@ -5,6 +9,14 @@ QuScrollView::QuScrollView(int x, int y, int w, int h, const char*l):
 {
     //ctor
     m_canvas = new QuCanvas(0, 0, 2000, 2000, l);
+}
+
+QuScrollView::QuScrollView(QuView *view, int x, int y, int w, int h):
+    Fl_Scroll(x, y, w, h),
+    m_view(view)
+{
+    m_logic = m_view->m_logic;
+    m_canvas = new QuCanvas(0, 0, 2000, 2000);
 }
 
 QuScrollView::~QuScrollView()
@@ -37,6 +49,10 @@ int QuScrollView::handle_push(int event)
     switch(button)
     {
         case FL_LEFT_MOUSE:
+            x = Fl::event_x();
+            y = Fl::event_y();
+
+            m_logic->addline(100, 100, 300, 100);
             break;
         case FL_RIGHT_MOUSE:
             break;
@@ -60,6 +76,8 @@ void QuScrollView::draw()
 
     Fl_Scroll::draw();
     //m_canvas->draw();
+
+    //fl_line(0, 0, 1000, 1000);
 }
 
 void QuScrollView::redraw()

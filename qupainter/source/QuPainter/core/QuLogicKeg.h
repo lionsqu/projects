@@ -6,6 +6,10 @@
 #define QULOGICKEG_H
 
 
+#include <QuEntity.h>
+
+
+
 class QuLogicKeg
 {
     public:
@@ -14,6 +18,8 @@ class QuLogicKeg
 
     public:
         int run();
+
+        int add(class QuEntity *entity);
 
     protected:
     private:

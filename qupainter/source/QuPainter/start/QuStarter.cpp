@@ -4,6 +4,14 @@
 //
 #include "QuStarter.h"
 
+
+#include <QuStore.h>
+#include <QuLogic.h>
+#include <QuView.h>
+#include <QuCore.h>
+
+
+
 QuStarter::QuStarter()
 {
     //ctor
@@ -16,7 +24,7 @@ QuStarter::~QuStarter()
 
 int QuStarter::run()
 {
-
+    /*
     QuStoreKeg store;
     QuLogicKeg logic;
     QuView view;
@@ -26,6 +34,16 @@ int QuStarter::run()
     store.run();
     logic.run();
     view.run();
+    */
+
+    QuStore store;
+    QuLogic logic(&store);
+    QuView view(&logic);
+
+    view.Create();
+    //view.show();
+    view.run();
+
 
     return 0;
 }
