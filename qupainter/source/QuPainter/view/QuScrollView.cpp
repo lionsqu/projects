@@ -41,18 +41,24 @@ int QuScrollView::handle(int event)
 int QuScrollView::handle_push(int event)
 {
     int button = 0;
-    int x = 0;
-    int y = 0;
+    //test
+    static int x = 0;
+    static int y = 0;
+    int x2 = 0;
+    int y2 = 0;
 
     button = Fl::event_button();
 
     switch(button)
     {
         case FL_LEFT_MOUSE:
-            x = Fl::event_x();
-            y = Fl::event_y();
+            x2 = Fl::event_x();
+            y2 = Fl::event_y();
 
-            m_logic->addline(100, 100, 300, 100);
+            //m_logic->addline(100, 100, 300, 100);
+            m_logic->addline(x, y, x2, y2);
+            x = x2;
+            y = y2;
             break;
         case FL_RIGHT_MOUSE:
             break;

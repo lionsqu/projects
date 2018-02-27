@@ -16,6 +16,8 @@ class QuCanvas : public Fl_Widget
 {
     public:
         QuCanvas(int x, int y, int w, int h, const char* l = 0);
+        QuCanvas(class QuLogicKeg *keg, int x, int y, int w, int h);
+
         virtual ~QuCanvas();
 
         void draw();
@@ -25,6 +27,8 @@ class QuCanvas : public Fl_Widget
         int converty(int y);
 
     private:
+        QuLogicKeg *m_keg;
+
 };
 
 #endif // QUCANVAS_H

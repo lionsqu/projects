@@ -18,6 +18,7 @@
 					<Add directory="logic" />
 					<Add directory="store" />
 					<Add directory="data" />
+					<Add directory="core" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,6 +33,7 @@
 					<Add directory="logic" />
 					<Add directory="store" />
 					<Add directory="data" />
+					<Add directory="core" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -59,6 +61,8 @@
 		<Unit filename="core/QuData.h" />
 		<Unit filename="core/QuEntity.cpp" />
 		<Unit filename="core/QuEntity.h" />
+		<Unit filename="core/QuHashMap.cpp" />
+		<Unit filename="core/QuHashMap.h" />
 		<Unit filename="core/QuLogicKeg.cpp" />
 		<Unit filename="core/QuLogicKeg.h" />
 		<Unit filename="core/QuObject.cpp" />

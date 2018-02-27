@@ -7,7 +7,7 @@
 
 
 #include <QuEntity.h>
-
+#include <QuHashMap.h>
 
 
 class QuLogicKeg
@@ -23,6 +23,7 @@ class QuLogicKeg
 
     protected:
     private:
+        QuHashMap   m_keg;
 };
 
 #endif // QULOGICKEG_H

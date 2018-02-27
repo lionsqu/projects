@@ -3,6 +3,9 @@
 //邮箱:lionsqu@yahoo.com
 //
 #include "QuLogic.h"
+#include <QuLine.h>
+
+
 
 QuLogic::QuLogic(QuStore *store):
     m_store(store)
@@ -19,6 +22,7 @@ QuLogic::~QuLogic()
 
 int QuLogic::addline(int x1, int y1, int x2, int y2)
 {
-    QuEntity *entity = new QuEntity();
+    //QuEntity *entity = new QuEntity();
+    QuEntity *entity = new QuLine(x1, y1, x2, y2);
     m_keg->add(entity);
 }

@@ -10,6 +10,13 @@ QuCanvas::QuCanvas(int x, int y, int w, int h, const char* l):
     //ctor
 }
 
+QuCanvas::QuCanvas(QuLogicKeg *keg, int x, int y, int w, int h):
+    Fl_Widget(x, y, w, h),
+    m_keg(keg)
+ {
+
+ }
+
 QuCanvas::~QuCanvas()
 {
     //dtor
@@ -39,6 +46,9 @@ void QuCanvas::draw()
     fl_line(x3, y3, x4, y4);
 
     fl_line(convertx(100), converty(100), convertx(400), converty(100));
+
+
+    //m_keg->draw(this);
 }
 
 int QuCanvas::convertx(int X)
