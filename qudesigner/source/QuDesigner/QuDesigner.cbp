@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="QuDesigner" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/QuDesigner" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="start" />
+					<Add directory="core" />
+					<Add directory="view" />
+					<Add directory="store" />
+					<Add directory="data" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/QuDesigner" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-s" />
+					<Add directory="start" />
+					<Add directory="core" />
+					<Add directory="view" />
+					<Add directory="store" />
+					<Add directory="data" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`fltk-config --cxxflags`" />
+		</Compiler>
+		<Linker>
+			<Add option="`fltk-config --ldflags`" />
+		</Linker>
+		<Unit filename="core/QuCallback.cpp" />
+		<Unit filename="core/QuCallback.h" />
+		<Unit filename="core/QuCore.cpp" />
+		<Unit filename="core/QuCore.h" />
+		<Unit filename="core/QuObject.cpp" />
+		<Unit filename="core/QuObject.h" />
+		<Unit filename="data/QuClass.cpp" />
+		<Unit filename="data/QuClass.h" />
+		<Unit filename="data/QuLayer.cpp" />
+		<Unit filename="data/QuLayer.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="start/QuStarter.cpp" />
+		<Unit filename="start/QuStarter.h" />
+		<Unit filename="store/QuStore.cpp" />
+		<Unit filename="store/QuStore.h" />
+		<Unit filename="view/QuTree.cpp" />
+		<Unit filename="view/QuTree.h" />
+		<Unit filename="view/QuView.cpp" />
+		<Unit filename="view/QuView.h" />
+		<Unit filename="view/QuWindow.cpp" />
+		<Unit filename="view/QuWindow.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
