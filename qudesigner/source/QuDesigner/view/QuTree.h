@@ -6,6 +6,7 @@
 #define QUTREE_H
 
 #include <FL/Fl_Tree.h>
+#include <QuCommon.h>
 #include <QuView.h>
 
 
@@ -19,6 +20,11 @@ class QuTree : public Fl_Tree
         int update();
 
     protected:
+        int popupmenu(int x, int y);
+
+        int click();
+        int add(Fl_Tree_Item*, QuList*);
+
     private:
         QuView      *m_view;
         QuCoreKeg   *m_keg;

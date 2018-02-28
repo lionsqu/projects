@@ -6,13 +6,22 @@
 #define QUSCHEME_H
 
 
+#include <QuCommon.h>
+
+
 class QuScheme
 {
     public:
         QuScheme();
         virtual ~QuScheme();
+
+        QuList      m_data;
+
+        int create();
+
     protected:
     private:
+
 };
 
 #endif // QUSCHEME_H

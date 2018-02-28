@@ -5,7 +5,7 @@
 #include "QuClass.h"
 
 QuClass::QuClass(std::string title):
-    QuObject(title)
+    QuDocument(title)
 {
     //ctor
 }

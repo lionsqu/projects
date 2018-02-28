@@ -6,10 +6,10 @@
 #define QUCLASS_H
 
 
-#include <QuObject.h>
+#include <QuDocument.h>
 
 
-class QuClass : public QuObject
+class QuClass : public QuDocument
 {
     public:
         QuClass(std::string);

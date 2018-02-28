@@ -4,6 +4,12 @@
 //
 #include "QuScheme.h"
 
+
+#include <QuLayer.h>
+#include <QuClass.h>
+
+
+
 QuScheme::QuScheme()
 {
     //ctor
@@ -12,4 +18,52 @@ QuScheme::QuScheme()
 QuScheme::~QuScheme()
 {
     //dtor
+}
+
+int QuScheme::create()
+{
+    QuObject *lay = NULL;
+    QuObject *obj = NULL;
+
+    lay = new QuLayer("start");
+    m_data.push_back(lay);
+    obj = new QuClass("QuStarter");
+    lay->m_children.push_back(obj);
+
+    lay = new QuLayer("data");
+    m_data.push_back(lay);
+    obj = new QuClass("QuObject");
+    lay->m_children.push_back(obj);
+    obj = new QuClass("QuCommon");
+    lay->m_children.push_back(obj);
+
+    lay = new QuLayer("store");
+    m_data.push_back(lay);
+    obj = new QuClass("QuStore");
+    lay->m_children.push_back(obj);
+    obj = new QuClass("QuXmlFile");
+    lay->m_children.push_back(obj);
+    obj = new QuClass("QuBinFile");
+    lay->m_children.push_back(obj);
+
+    lay = new QuLayer("core");
+    m_data.push_back(lay);
+    obj = new QuClass("QuCore");
+    lay->m_children.push_back(obj);
+    obj = new QuClass("QuCallback");
+    lay->m_children.push_back(obj);
+    obj = new QuClass("QuCoreKeg");
+    lay->m_children.push_back(obj);
+
+    lay = new QuLayer("view");
+    m_data.push_back(lay);
+    obj = new QuClass("QuView");
+    lay->m_children.push_back(obj);
+    obj = new QuClass("QuWindow");
+    lay->m_children.push_back(obj);
+    obj = new QuClass("QuWidget");
+    lay->m_children.push_back(obj);
+
+    obj = new QuClass("main");
+    m_data.push_back(obj);
 }

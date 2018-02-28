@@ -7,6 +7,7 @@
 
 
 #include <string>
+#include <QuCommon.h>
 
 
 
@@ -17,7 +18,8 @@ class QuObject
         virtual ~QuObject();
 
 
-        std::string m_title;
+        std::string     m_title;
+        QuList           m_children;
 
     protected:
     private:

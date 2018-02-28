@@ -55,6 +55,12 @@
 		<Unit filename="core/QuScheme.h" />
 		<Unit filename="data/QuClass.cpp" />
 		<Unit filename="data/QuClass.h" />
+		<Unit filename="data/QuCommon.cpp" />
+		<Unit filename="data/QuCommon.h" />
+		<Unit filename="data/QuDocument.cpp" />
+		<Unit filename="data/QuDocument.h" />
+		<Unit filename="data/QuFolder.cpp" />
+		<Unit filename="data/QuFolder.h" />
 		<Unit filename="data/QuLayer.cpp" />
 		<Unit filename="data/QuLayer.h" />
 		<Unit filename="main.cpp" />
@@ -64,6 +70,8 @@
 		<Unit filename="store/QuStore.h" />
 		<Unit filename="view/QuTree.cpp" />
 		<Unit filename="view/QuTree.h" />
+		<Unit filename="view/QuTreeItem.cpp" />
+		<Unit filename="view/QuTreeItem.h" />
 		<Unit filename="view/QuView.cpp" />
 		<Unit filename="view/QuView.h" />
 		<Unit filename="view/QuWindow.cpp" />

@@ -8,6 +8,8 @@
 #include <QuStore.h>
 #include <QuCoreKeg.h>
 #include <QuView.h>
+#include <QuScheme.h>
+
 
 
 class QuCore
@@ -30,6 +32,8 @@ class QuCore
 
     public:
         QuCoreKeg   m_keg;
+        QuScheme    *m_sch;
+        int            m_load;
 };
 
 #endif // QUCORE_H

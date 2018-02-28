@@ -5,7 +5,7 @@
 #include "QuLayer.h"
 
 QuLayer::QuLayer(std::string title):
-    QuObject(title)
+    QuFolder(title)
 {
     //ctor
 }

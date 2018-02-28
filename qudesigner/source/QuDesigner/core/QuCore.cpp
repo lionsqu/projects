@@ -11,7 +11,8 @@
 
 
 QuCore::QuCore(QuStore *store) :
-    m_store(store)
+    m_store(store),
+    m_load(1)
 {
     //ctor
 }
@@ -40,10 +41,11 @@ int QuCore::quit()
 
 int QuCore::create_quskeleton()
 {
+    /*
     QuObject *lay = NULL;
     QuObject *obj = NULL;
 
-    lay = new QuLayer("store");
+    lay = new QuLayer("Store");
     m_keg.insert(lay);
     obj = new QuClass("QuStore");
     m_keg.insert(obj);
@@ -67,6 +69,29 @@ int QuCore::create_quskeleton()
     m_keg.insert(obj);
     obj = new QuClass("QuWindow");
     m_keg.insert(obj);
-    obj = new QuClass("Qu");
+    obj = new QuClass("QuWidget");
     m_keg.insert(obj);
+    */
+
+    switch(m_load)
+    {
+        case 1:
+            {
+                m_sch = new QuScheme();
+                m_sch->create();
+                m_load = 3;
+            }
+            break;
+        case 2:
+            break;
+        case 3:
+            {
+                delete m_sch;
+                m_sch = new QuScheme();
+                m_sch->create();
+                m_load = 3;
+            }
+            break;
+    }
+
 }

@@ -16,27 +16,34 @@ QuCoreKeg::~QuCoreKeg()
 
 int QuCoreKeg::insert(QuObject *obj)
 {
-    m_keg.insert(std::make_pair(obj->m_title, obj));
+    //m_keg.insert(std::make_pair(obj->m_title, obj));
+    m_keg.push_back(obj);
 
     return(0);
 }
 
 int QuCoreKeg::remove(QuObject *obj)
 {
+    /*
     for(QuHashmap::iterator it = m_keg.begin(); it != m_keg.end(); ++it)
     {
         if(it->second == obj)m_keg.erase(it);
     }
+    */
+
     return(0);
 }
 
 int QuCoreKeg::remove(std::string key)
 {
+    /*
     for(QuHashmap::iterator it = m_keg.begin(); it != m_keg.end(); ++it)
     {
         QuObject *obj = it->second;
         if(obj->m_title == key)
             m_keg.erase(it);
     }
+    */
+
     return(0);
 }

@@ -6,14 +6,7 @@
 #define QUCOREKEG_H
 
 
-#include <unordered_map>
-#include <QuObject.h>
-
-
-
-typedef std::unordered_map<std::string, QuObject*> QuHashmap;
-
-
+#include <QuCommon.h>
 
 
 class QuCoreKeg
@@ -30,7 +23,8 @@ class QuCoreKeg
     private:
 
     public:
-        QuHashmap   m_keg;
+        //QuHashmap   m_keg;
+        QuList          m_keg;
 };
 
 #endif // QUCOREKEG_H
