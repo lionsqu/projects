@@ -16,10 +16,12 @@ class QuTree : public Fl_Tree
         virtual ~QuTree();
 
         int handle(int event);
+        int update();
 
     protected:
     private:
         QuView      *m_view;
+        QuCoreKeg   *m_keg;
 };
 
 #endif // QUTREE_H

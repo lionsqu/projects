@@ -8,6 +8,7 @@ QuView::QuView(QuCore *core) :
     m_core(core)
 {
     //ctor
+    m_core->m_view = this;
     create();
 }
 
@@ -30,4 +31,10 @@ int QuView::run()
 int QuView::create()
 {
     m_main = new QuWindow(this, 640, 480, "QuDesigner");
+}
+
+int QuView::update()
+{
+    m_main->update();
+    m_main->redraw();
 }

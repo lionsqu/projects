@@ -4,7 +4,8 @@
 //
 #include "QuObject.h"
 
-QuObject::QuObject()
+QuObject::QuObject(std::string title):
+    m_title(title)
 {
     //ctor
 }

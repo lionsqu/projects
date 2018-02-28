@@ -6,6 +6,8 @@
 #define QUCORE_H
 
 #include <QuStore.h>
+#include <QuCoreKeg.h>
+#include <QuView.h>
 
 
 class QuCore
@@ -14,12 +16,20 @@ class QuCore
         QuCore(class QuStore *store);
         virtual ~QuCore();
 
+        int create();
         int run(int argc, char **argv);
         int quit();
 
+        class QuView  *m_view;
+
     protected:
+        int create_quskeleton();
+
     private:
         QuStore      *m_store;
+
+    public:
+        QuCoreKeg   m_keg;
 };
 
 #endif // QUCORE_H

@@ -32,3 +32,16 @@ int QuWindow::create()
     m_group = new Fl_Group(300, 30, w()-300, h());
     this->resizable(m_group);
 }
+
+void QuWindow::draw()
+{
+    Fl_Double_Window::draw();
+
+    //
+
+}
+
+int QuWindow::update()
+{
+    m_tree->update();
+}

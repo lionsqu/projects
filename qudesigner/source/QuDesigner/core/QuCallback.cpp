@@ -4,22 +4,39 @@
 //
 #include "QuCallback.h"
 
-Fl_Menu_Item menuitems[2] =
+#include <QuWindow.h>
+#include <QuView.h>
+#include <QuCore.h>
+
+
+
+Fl_Menu_Item menuitems[] =
 {
     {"File",            0,              0,              0,              FL_SUBMENU},
-    {"Exit",            0,              (Fl_Callback*)QuCallback::quit_cb}
+    {"New",            0,              (Fl_Callback*)QuCallback::new_cb},
+    {"Open...",            0,              (Fl_Callback*)QuCallback::open_cb},
+    {"Close",            0,              (Fl_Callback*)QuCallback::close_cb,         0,      FL_MENU_DIVIDER},
+    {"Save",            0,              (Fl_Callback*)QuCallback::save_cb},
+    {"Save as...",            0,              (Fl_Callback*)QuCallback::saveas_cb,         0,      FL_MENU_DIVIDER},
+    {"Write to...",            0,              (Fl_Callback*)QuCallback::writeto_cb,         0,      FL_MENU_DIVIDER},
+    {"Exit",            0,              (Fl_Callback*)QuCallback::quit_cb},
+    {0}
 };
 
 
-Fl_Menu_Item popupitems[2] =
+Fl_Menu_Item popupitems[] =
 {
-    {"File",            0,              0,              0,              FL_SUBMENU},
-    {"Exit",            0,              (Fl_Callback*)QuCallback::quit_cb}
+    {"Add",            0,              0,              0,              FL_SUBMENU},
+    {"Function",            0,              (Fl_Callback*)QuCallback::addfunc_cb},
+    {"Class",            0,              (Fl_Callback*)QuCallback::addclass_cb},
+    {0},
+    {"Delete",            0,              (Fl_Callback*)QuCallback::delete_cb},
+    {0}
 };
 
 
 
-QuCore *QuCallback::m_core = 0;
+//QuCore *QuCallback::m_core = 0;
 
 
 
@@ -33,12 +50,61 @@ QuCallback::~QuCallback()
     //dtor
 }
 
-void QuCallback::quit_cb()
+void QuCallback::new_cb(Fl_Widget*w, void*v)
 {
-    QuCallback::m_core->quit();
+    QuWindow *win = (QuWindow*)v;
+    QuCore *core = win->m_view->m_core;
+    core->create();
+}
+
+void QuCallback::open_cb(Fl_Widget*w, void*v)
+{
+
+}
+
+void QuCallback::close_cb(Fl_Widget*w, void*v)
+{
+
+}
+
+void QuCallback::save_cb(Fl_Widget*w, void*v)
+{
+
+}
+
+void QuCallback::saveas_cb(Fl_Widget*w, void*v)
+{
+
+}
+
+void QuCallback::writeto_cb(Fl_Widget*w, void*v)
+{
+
+}
+
+void QuCallback::quit_cb(Fl_Widget*w, void*v)
+{
+    QuWindow *win = (QuWindow*)v;
+    QuCore *core = win->m_view->m_core;
+    core->quit();
 }
 
 void QuCallback::popup_cb()
 {
-    QuCallback::m_core->quit();
+
+}
+
+void QuCallback::addfunc_cb()
+{
+
+}
+
+void QuCallback::addclass_cb()
+{
+
+}
+
+void QuCallback::delete_cb()
+{
+
 }

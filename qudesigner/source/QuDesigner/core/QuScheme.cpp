@@ -2,25 +2,14 @@
 //未经书面授权，商业性组织或者个人不得销售或赠送本代码以及本代码的衍生代码，编译的中间产物或者可执行文件，以及各类文档。
 //邮箱:lionsqu@yahoo.com
 //
-#ifndef QUOBJECT_H
-#define QUOBJECT_H
+#include "QuScheme.h"
 
-
-#include <string>
-
-
-
-class QuObject
+QuScheme::QuScheme()
 {
-    public:
-        QuObject(std::string title);
-        virtual ~QuObject();
+    //ctor
+}
 
-
-        std::string m_title;
-
-    protected:
-    private:
-};
-
-#endif // QUOBJECT_H
+QuScheme::~QuScheme()
+{
+    //dtor
+}

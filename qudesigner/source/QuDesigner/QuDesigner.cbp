@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 					<Add directory="start" />
 					<Add directory="core" />
@@ -46,8 +47,12 @@
 		<Unit filename="core/QuCallback.h" />
 		<Unit filename="core/QuCore.cpp" />
 		<Unit filename="core/QuCore.h" />
+		<Unit filename="core/QuCoreKeg.cpp" />
+		<Unit filename="core/QuCoreKeg.h" />
 		<Unit filename="core/QuObject.cpp" />
 		<Unit filename="core/QuObject.h" />
+		<Unit filename="core/QuScheme.cpp" />
+		<Unit filename="core/QuScheme.h" />
 		<Unit filename="data/QuClass.cpp" />
 		<Unit filename="data/QuClass.h" />
 		<Unit filename="data/QuLayer.cpp" />

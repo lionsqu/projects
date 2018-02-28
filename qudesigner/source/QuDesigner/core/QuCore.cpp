@@ -6,7 +6,8 @@
 
 
 #include <stdlib.h>
-
+#include <QuClass.h>
+#include <QuLayer.h>
 
 
 QuCore::QuCore(QuStore *store) :
@@ -20,6 +21,13 @@ QuCore::~QuCore()
     //dtor
 }
 
+int QuCore::create()
+{
+    create_quskeleton();
+
+    m_view->update();
+}
+
 int QuCore::run(int argc, char **argv)
 {
 
@@ -28,4 +36,37 @@ int QuCore::run(int argc, char **argv)
 int QuCore::quit()
 {
     exit(0);
+}
+
+int QuCore::create_quskeleton()
+{
+    QuObject *lay = NULL;
+    QuObject *obj = NULL;
+
+    lay = new QuLayer("store");
+    m_keg.insert(lay);
+    obj = new QuClass("QuStore");
+    m_keg.insert(obj);
+    obj = new QuClass("QuXmlFile");
+    m_keg.insert(obj);
+    obj = new QuClass("QuBinFile");
+    m_keg.insert(obj);
+
+    lay = new QuLayer("Logic");
+    m_keg.insert(lay);
+    obj = new QuClass("QuObject");
+    m_keg.insert(obj);
+    obj = new QuClass("QuCallback");
+    m_keg.insert(obj);
+    obj = new QuClass("QuCore");
+    m_keg.insert(obj);
+
+    lay = new QuLayer("View");
+    m_keg.insert(lay);
+    obj = new QuClass("QuView");
+    m_keg.insert(obj);
+    obj = new QuClass("QuWindow");
+    m_keg.insert(obj);
+    obj = new QuClass("Qu");
+    m_keg.insert(obj);
 }

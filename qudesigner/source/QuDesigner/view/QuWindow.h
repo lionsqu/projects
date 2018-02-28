@@ -19,10 +19,17 @@ class QuWindow : public Fl_Double_Window
     public:
         QuWindow(class QuView *view, int w, int h, const char *l = 0);
         virtual ~QuWindow();
+
+        QuView          *m_view;
+
+        int update();
+
     protected:
         int create();
+        void draw();
+
     private:
-        QuView          *m_view;
+
         Fl_Menu_Bar     *m_bar;
         class QuTree    *m_tree;
         Fl_Group        *m_group;

@@ -12,6 +12,7 @@ QuTree::QuTree(class QuView *view, int w, int h, const char *l) :
     m_view(view)
 {
     //ctor
+    m_keg = &(m_view->m_core->m_keg);
 }
 
 QuTree::~QuTree()
@@ -40,4 +41,17 @@ int QuTree::handle(int event)
             break;
     }
     return Fl_Tree::handle(event);
+}
+
+int QuTree::update()
+{
+    clear();
+
+    QuObject *obj;
+
+    for(QuHashmap::iterator it = m_keg->m_keg.begin(); it != m_keg->m_keg.end(); ++it)
+    {
+        obj = it->second;
+        this->add(obj->m_title.c_str());
+    }
 }

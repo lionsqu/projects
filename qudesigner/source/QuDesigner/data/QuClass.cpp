@@ -4,7 +4,8 @@
 //
 #include "QuClass.h"
 
-QuClass::QuClass()
+QuClass::QuClass(std::string title):
+    QuObject(title)
 {
     //ctor
 }

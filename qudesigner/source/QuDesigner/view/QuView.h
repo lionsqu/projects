@@ -18,14 +18,19 @@ class QuView
         QuView(class QuCore *core);
         virtual ~QuView();
 
+        class QuCore      *m_core;
+
+
         int show();
         int run();
+
+        int update();
 
     protected:
         int create();
 
     private:
-        class QuCore      *m_core;
+
         class QuWindow    *m_main;
 };
 

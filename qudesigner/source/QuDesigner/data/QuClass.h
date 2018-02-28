@@ -6,10 +6,13 @@
 #define QUCLASS_H
 
 
-class QuClass
+#include <QuObject.h>
+
+
+class QuClass : public QuObject
 {
     public:
-        QuClass();
+        QuClass(std::string);
         virtual ~QuClass();
     protected:
     private:

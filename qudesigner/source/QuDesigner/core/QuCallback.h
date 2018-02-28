@@ -10,24 +10,39 @@
 #include <QuCore.h>
 
 
-extern Fl_Menu_Item menuitems[2];
-extern Fl_Menu_Item popupitems[2];
+extern Fl_Menu_Item menuitems[];
+extern Fl_Menu_Item popupitems[];
 
 
 class QuCallback
 {
     public:
-        QuCallback(QuCore *core);
+        QuCallback(class QuCore *core);
         virtual ~QuCallback();
 
-        static void quit_cb();
+        static void new_cb(Fl_Widget*w, void*v);
+        static void open_cb(Fl_Widget*w, void*v);
+        static void close_cb(Fl_Widget*w, void*v);
+
+        static void save_cb(Fl_Widget*w, void*v);
+        static void saveas_cb(Fl_Widget*w, void*v);
+
+        static void writeto_cb(Fl_Widget*w, void*v);
+
+        static void quit_cb(Fl_Widget*w, void*v);
+
         static void popup_cb();
+
+
+        static void addfunc_cb();
+        static void addclass_cb();
+        static void delete_cb();
 
     protected:
     private:
 
     public:
-        static QuCore      *m_core;
+        //QuCore      *m_core;
 };
 
 #endif // QUCALLBACK_H

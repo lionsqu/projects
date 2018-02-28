@@ -4,7 +4,8 @@
 //
 #include "QuLayer.h"
 
-QuLayer::QuLayer()
+QuLayer::QuLayer(std::string title):
+    QuObject(title)
 {
     //ctor
 }

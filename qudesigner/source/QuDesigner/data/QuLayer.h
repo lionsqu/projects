@@ -6,10 +6,13 @@
 #define QULAYER_H
 
 
-class QuLayer
+#include <QuObject.h>
+
+
+class QuLayer : public QuObject
 {
     public:
-        QuLayer();
+        QuLayer(std::string title);
         virtual ~QuLayer();
     protected:
     private:
